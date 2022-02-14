@@ -1,1 +1,1 @@
-# binary tress
+# Binary trees
