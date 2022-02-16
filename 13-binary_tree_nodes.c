@@ -15,9 +15,9 @@ else
 {
 if (tree->parent == NULL)
 height = 1;
-if (tree->left != NULL)
-height = height + 1;
-if (tree->right != NULL)
+if (tree->left != NULL && tree->right != NULL)
+height = height + 2;
+else if (tree->left != NULL || tree->right != NULL)
 height = height + 1;
 return (height);
 }
