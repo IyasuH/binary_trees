@@ -9,24 +9,24 @@
  */
 binary_tree_t *binary_tree_insert_right(binary_tree_t *parent, int value)
 {
-  binary_tree_t *root = NULL;
-  if(parent == NULL)
-     return(NULL);
-  root = binary_tree_node(parent, value);
-  if(root == NULL)
-    return(NULL);
-  root->parent = parent;
-  root->n = value;
-  root->left = NULL;
-  if (parent->right != NULL)
-    {
-      root->right = parent->right;
-      parent->right = root;
-      root->right->parent = root;
-    }
-  else
-    {
-      parent->right = root;
-    }
-  return(root);
+binary_tree_t *root = NULL;
+if (parent == NULL)
+return (NULL);
+root = binary_tree_node(parent, value);
+if (root == NULL)
+return (NULL);
+root->parent = parent;
+root->n = value;
+root->left = NULL;
+if (parent->right != NULL)
+{
+root->right = parent->right;
+parent->right = root;
+root->right->parent = root;
+}
+else
+{
+parent->right = root;
+}
+return (root);
 }
