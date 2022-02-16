@@ -7,7 +7,7 @@
 size_t binary_tree_height(const binary_tree_t *tree)
 {
 size_t n;
-if (tree == NULL && func == NULL)
+if (tree == NULL)
 return (0);
 else
 {
