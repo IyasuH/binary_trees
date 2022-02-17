@@ -8,17 +8,9 @@
  */
 size_t binary_tree_nodes(const binary_tree_t *tree)
 {
-size_t height = 0;
-if (tree == NULL)
+if (!tree)
 return (0);
-else
-{
-if (tree->parent == NULL)
-height = 1;
-if (tree->left != NULL && tree->right != NULL)
-height = height + 2;
-else if (tree->left != NULL || tree->right != NULL)
-height = height + 1;
-return (height);
-}
+if (tree->right != NULL || tree->left != NULL)
+return (binary_tree_nodes(tree->right) + binary_tree_nodes(tree->left) + 1);
+return (binary_tree_nodes(tree->right) + binary_tree_nodes(tree->left));
 }
